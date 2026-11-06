@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Focus Board",
+  "version": "1.0.0",
+  "description": "A distraction-free YouTube study environment with focus gating, notes, and usage tracking.",
+  "permissions": ["storage", "tabs", "activeTab", "scripting", "idle"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://youtube.com/*",
+    "*://m.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://youtube.com/*",
+        "*://m.youtube.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "YouTube Focus Board",
+    "default_popup": "popup.html"
+  }
+}

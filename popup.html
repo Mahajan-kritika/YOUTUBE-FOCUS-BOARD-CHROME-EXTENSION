@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Focus Board</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Focus workspace</p>
+          <h1>YouTube Focus Board</h1>
+        </div>
+      </header>
+
+      <section class="card stat-grid">
+        <div>
+          <p class="label">Today</p>
+          <strong id="usage-display">0 minutes</strong>
+        </div>
+        <div>
+          <p class="label">Study intention</p>
+          <strong id="intention-display">Not set</strong>
+        </div>
+        <div>
+          <p class="label">Unlock</p>
+          <strong id="unlock-display">No lock</strong>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Distraction controls</h2>
+        </div>
+        <div class="toggle-list">
+          <label class="toggle-row">
+            <span>Hide Shorts</span>
+            <input id="toggle-shorts" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span>Hide Recommendations</span>
+            <input id="toggle-recommendations" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span>Hide Comments</span>
+            <input id="toggle-comments" type="checkbox" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Study list</h2>
+          <span id="study-count" class="pill">0 saved</span>
+        </div>
+        <div id="study-list" class="stacked-list"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Notes</h2>
+        </div>
+        <div class="notes-input-wrap">
+          <textarea id="note-input" rows="3" placeholder="Write a note for the current video..."></textarea>
+          <div class="notes-actions">
+            <button id="save-note" class="primary-btn">Save note</button>
+          </div>
+        </div>
+        <div id="notes-list" class="stacked-list"></div>
+      </section>
+
+      <section class="quick-actions">
+        <button id="add-video" class="primary-btn">Add Current Video</button>
+        <button id="open-study-list" class="secondary-btn">Open Study List</button>
+        <button id="view-notes" class="secondary-btn">View Notes</button>
+        <button id="end-session" class="danger-btn">End Study Session</button>
+      </section>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
